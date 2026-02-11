@@ -7,6 +7,7 @@ public class SearchForCourseByTitle {
         given().baseUri("http://localhost:8080")
                 .queryParam("title","Selenium")
                 .when().get("/courses/search")
-                .then().log().all();
+                .then().log().all()
+                .assertThat().statusCode(200);
     }
 }

@@ -11,6 +11,7 @@ public class GetCourseWithHeader {
         given().baseUri("http://localhost:8080")
                 .header(apiKeyHeader)
                 .when().get("/courses")
-                .then().log().all();
+                .then().log().all()
+                .assertThat().statusCode(200);
     }
 }

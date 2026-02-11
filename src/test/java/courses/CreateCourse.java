@@ -13,6 +13,7 @@ public class CreateCourse {
              .contentType(ContentType.JSON)
              .body(course)
              .when().post("/courses")
-             .then().log().all();
+             .then().log().all()
+             .assertThat().statusCode(201);
     }
 }

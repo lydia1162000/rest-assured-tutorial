@@ -14,7 +14,8 @@ public class EditCourse {
                 .pathParams("id","7905b7e3-38e8-4935-b20a-f588f3bf2f4c")
                 .body(course)
                 .when().get("/courses/{id}")
-                .then().log().all();
+                .then().log().all()
+                .assertThat().statusCode(200);
 
     }
 }

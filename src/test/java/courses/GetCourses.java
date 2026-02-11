@@ -7,6 +7,7 @@ public class GetCourses {
 
         RestAssured.given().baseUri("http://localhost:8080")
                 .when().get("/courses")
-                .then().log().all();
+                .then().log().all()
+                .assertThat().statusCode(200);
     }
 }
